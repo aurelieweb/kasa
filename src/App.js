@@ -5,7 +5,7 @@ import Accueil from './pages/Accueil';
 import APropos from './pages/APropos';
 import Logement from './pages/Logement';
 import Error from './components/Error';
-import './styles.scss'
+import './styles/styles.scss'
 
 function App() {
   return (

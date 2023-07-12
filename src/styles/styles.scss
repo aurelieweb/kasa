@@ -5,7 +5,8 @@ body {
       sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: pink;
+    background-color: #ffffff;
+    ;
   }
   
   code {
@@ -14,25 +15,32 @@ body {
   }
 
   /*HEADER*/
-  /*.header {
+  .header {
+    /*Voir pour gestion de la largeur so possible responsive ou pas?*/
+    display: flex;
+    width: auto;
+    position: relative;
+    height: 68px;
+    top: 40px;
+    left: 100px;
     background-color: #f0f0f0;
     padding: 10px;
   
     .nav {
-      display: grid;
-      grid-template-columns: auto 1fr;
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
       align-items: center;
   
-      .logo {
-        font-size: 1.5rem;
-        font-weight: bold;
-        color: #333;
-        text-decoration: none;
-      }
+      /*.logo {
+
+      }*/
   
       .menu {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        display: flex;
+        justify-content: space-between;
+        width: 309px;
+        height: 34px;
         list-style: none;
         padding: 0;
         margin: 0;
@@ -41,9 +49,9 @@ body {
           text-align: center;
   
           .menu-link {
+            color: #FF6060;
             display: block;
             padding: 10px;
-            color: #333;
             text-decoration: none;
   
             &:hover {
@@ -53,5 +61,5 @@ body {
         }
       }
     }
-  }*/
+  }
   
