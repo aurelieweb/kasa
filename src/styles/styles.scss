@@ -1,3 +1,9 @@
+@import './utils/_variables.scss';
+@import './utils/_mixins.scss';
+
+
+
+
 body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -16,30 +22,45 @@ body {
 
   /*HEADER*/
   .header {
-    /*Voir pour gestion de la largeur so possible responsive ou pas?*/
+    /*Voir pour gestion de la largeur si possible responsive ou pas?
+
+    Exemple uilisation mixin
+    @include tablet {
+      display: flex;
+      justify-content: space-between;  
+   }
+    */
     display: flex;
-    width: auto;
+    width: 100%;
     position: relative;
     height: 68px;
     top: 40px;
-    left: 100px;
-    background-color: #f0f0f0;
+    /*left: 100px;*/
+    background-color: $white;
     padding: 10px;
+    @include responsive {
+      height: 47px;
+      top: 20px;
+    }
   
     .nav {
       display: flex;
       width: 100%;
-      justify-content: space-between;
+      justify-content: space-around;
       align-items: center;
   
-      /*.logo {
-
-      }*/
+      .logo {
+        /*Comment gérer le logo avec une deuxieme image ou reduire automatiquement la taille du logo*/
+        @include responsive {
+          max-height: 47px;
+          width: auto;
+        }
+      }
   
       .menu {
         display: flex;
         justify-content: space-between;
-        width: 309px;
+        width: 10rem;
         height: 34px;
         list-style: none;
         padding: 0;
@@ -49,13 +70,13 @@ body {
           text-align: center;
   
           .menu-link {
-            color: #FF6060;
+            color: $pink;
             display: block;
             padding: 10px;
             text-decoration: none;
   
             &:hover {
-              background-color: #ddd;
+              text-decoration: underline;
             }
           }
         }
