@@ -1,9 +1,10 @@
 import React from 'react';
 import Header from './Header';
+import Footer from './Footer';
 
 function Layout({ children }) {
   return (
-    <div>
+    <div className='container'>
       {/* Header */}
       <Header />
 
@@ -11,9 +12,8 @@ function Layout({ children }) {
       <main>{children}</main>
 
       {/* Footer */}
-      <footer>
-        {/* Contenu du footer */}
-      </footer>
+      <Footer />
+
     </div>
   );
 }

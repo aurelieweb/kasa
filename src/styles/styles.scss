@@ -20,6 +20,13 @@ body {
       monospace;
   }
 
+  /*Mettre en place un container à 1440px? A voir*/
+  .container {
+    min-height: 100vh;
+    padding-bottom: 68px; /* Hauteur du footer */
+    box-sizing: border-box;
+}
+
   /*HEADER*/
   .header {
     /*Voir pour gestion de la largeur si possible responsive ou pas?
@@ -83,4 +90,29 @@ body {
       }
     }
   }
+
+/*FOOTER*/
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 209px;
+  background-color: $black;
+
+  /*.logo {
+    // Ajouter les styles pour le logo ici
+  }*/
+
+  .footer-text {
+    margin-left: 10px;
+    color: $white;
+  }
+}
+
   
