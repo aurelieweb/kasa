@@ -5,6 +5,7 @@ import Footer from './Footer';
 function Layout({ children }) {
   return (
     <div className='container'>
+      <div className='container__body'>
       {/* Header */}
       <Header />
 
@@ -13,7 +14,7 @@ function Layout({ children }) {
 
       {/* Footer */}
       <Footer />
-
+      </div>
     </div>
   );
 }
