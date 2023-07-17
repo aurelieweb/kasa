@@ -50,6 +50,7 @@ code {
   display: flex;
   flex-direction: column;
   margin-top: 63px;
+  align-items: center;
 
 }
 
@@ -228,13 +229,91 @@ code {
 /*COLLAPSE*/
 .collapse {
 
-  &-header{
-    background-color: $pink;
-  }
+  @include container;
+  max-width: 1040px;
+  width: 100%;
+  &__container{
+    width: 100%;
 
-  &-content{
-    background-color: $grey;
-  }
+    &-header{
+      background-color: $pink;
+      display:flex;
+      justify-content: space-between;
+    }
 
+    &-content{
+      background-color: $grey;
+    }
+  }
+}
+
+/*Error*/
+.error {
+  @include container;
+  color: $pink;
+}
+
+/*SLIDESHOW*/
+.slideshow {
+  position: relative;
+  width: 100%;
+  height: 400px;
+}
+
+.slideshow img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.slideshow-arrows {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+}
+
+.arrow {
+  background-color: rgba(255, 255, 255, 0.5);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  padding: 10px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.arrow:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.left {
+  left: 20px;
+}
+
+.right {
+  right: 20px;
+}
+
+.slideshow-bullets {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.slideshow-bullets button {
+  background-color: rgba(255, 255, 255, 0.5);
+  border: none;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  padding: 0;
+  cursor: pointer;
+}
+
+.slideshow-bullets button.active {
+  background-color: #fff;
 }
 

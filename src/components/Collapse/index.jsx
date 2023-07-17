@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../../styles/styles.scss';
-import arrowUpIcon from '../../assets/arrow_back_ios-24px 2.png';
-import arrowDownIcon from '../../assets/arrow_back_ios-24px 3.png';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAngleDown, faAngleUp } from '@fortawesome/free-solid-svg-icons';
 
 function Collapse({ data }) {
   const [collapsedItems, setCollapsedItems] = useState([]);
@@ -15,19 +15,19 @@ function Collapse({ data }) {
   };
 
   return (
-    <div>
+    <div className='collapse'>
       {data.map((item, index) => (
-        <div key={index} className="collapse">
-          <div className="collapse-header" onClick={() => toggleCollapse(index)}>
-            {collapsedItems[index] ? (
-              <img src={arrowDownIcon} alt="Collapse" />
-            ) : (
-              <img src={arrowUpIcon} alt="Expand" />
-            )}
+        <div key={index} className="collapse__container">
+          <div className="collapse__container-header" onClick={() => toggleCollapse(index)}>
             <h2>{item.title}</h2>
+            {collapsedItems[index] ? (
+              <FontAwesomeIcon icon={faAngleDown} alt="Collapse" />
+            ) : (
+              <FontAwesomeIcon icon={faAngleUp} alt="Expand" />
+            )}
           </div>
           {!collapsedItems[index] && (
-            <div className="collapse-content">
+            <div className="collapse__container-content">
               <p>{item.content}</p>
             </div>
           )}
