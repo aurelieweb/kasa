@@ -225,4 +225,16 @@ code {
   }
 }
 
+/*COLLAPSE*/
+.collapse {
+
+  &-header{
+    background-color: $pink;
+  }
+
+  &-content{
+    background-color: $grey;
+  }
+
+}
 
