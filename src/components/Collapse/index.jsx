@@ -15,11 +15,11 @@ function Collapse({ data }) {
   };
 
   return (
-    <div className='collapse'>
+    <div className='collapse collapse-row'>
       {data.map((item, index) => (
         <div key={index} className="collapse__container">
           <div className="collapse__container-header" onClick={() => toggleCollapse(index)}>
-            <h2>{item.title}</h2>
+            <p>{item.title}</p>
             {collapsedItems[index] ? (
               <FontAwesomeIcon icon={faAngleDown} alt="Collapse" />
             ) : (

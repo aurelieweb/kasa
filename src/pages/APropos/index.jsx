@@ -16,7 +16,7 @@ function APropos () {
   return (
     <div className='main'>
       <Banner />
-        <Collapse data={collapseData}/>
+      <Collapse className='collapse' data={collapseData}/>
     </div>
   );
 };
