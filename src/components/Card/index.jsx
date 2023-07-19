@@ -11,7 +11,7 @@ function Card(props) {
       <div className="card">
         <img className="card__image" src={logement.cover} alt="logement" />
         <div className="card__content">
-          <h2 className="card__content-text">{logement.title}</h2>
+          <p className="card__content-text">{logement.title}</p>
         </div>
       </div>
     </Link>
