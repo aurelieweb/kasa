@@ -32,10 +32,15 @@ code {
   /*Mettre en place un container à 1440px? A voir*/
 .container {
   min-height: 100vh;
-  /*box-sizing: border-box;*/
+  margin: auto;
+  padding: 0 10px;
   display: flex;
   justify-content: space-around;
   max-width: 1440px;
+
+  @include mobile {
+    max-width: 375px;
+  }
 }
 
 .container__body {
@@ -49,11 +54,11 @@ code {
 }
 .main {
   display: flex;
+  width: 100%;
   flex-direction: column;
   margin-top: 63px;
   align-items: center;
   padding-bottom: 209px;
-  position: absolute;
 
 }
 
@@ -78,6 +83,11 @@ code {
     top: 20px;
     }
   
+  @include mobile {
+    flex-direction: column;
+    /*align-items: ;*/
+  }
+  
   .nav {
     display: flex;
     width: 100%;
@@ -86,7 +96,7 @@ code {
   
     .logo {
       /*Comment gérer le logo avec une deuxieme image ou reduire automatiquement la taille du logo*/
-      @include tablet {
+      @include mobile {
         max-height: 47px;
         width: auto;
         }
@@ -162,7 +172,7 @@ code {
     text-align: center;
 
     & h1 {
-      @include tablet {
+      @include mobile {
       font-size: 24px;
       }
     }
@@ -205,6 +215,9 @@ code {
     border-radius: 10px;
     background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
     background-color: $pink;
+    @include mobile {
+      height: 255px;
+    }
   
 
   &__image {
@@ -215,6 +228,9 @@ code {
     object-fit: cover;
     border-radius: 10px;
     margin-bottom: 10px;
+    @include mobile {
+      height: 200px;
+    }
   }
 
   &-link {
@@ -240,10 +256,7 @@ code {
   max-width: 1023px;
   width: 100%;
   &__container{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 20px;
+    @include container;
 
     &-header{
       background-color: $pink;
@@ -266,7 +279,7 @@ code {
   }
 }
 
-.collapse-row {
+.logement-page .collapse {
   display: flex;
   justify-content: space-around;
   flex-direction: row;
@@ -274,6 +287,10 @@ code {
   max-width: none;
   align-items: flex-start;
   gap: 60px;
+  @include mobile {
+    @include container;
+    gap: 0px;
+  }
 
   ul {
     list-style: none;
@@ -356,6 +373,10 @@ code {
   justify-content: space-between;
   width: 100%;
   color: $pink;
+  @include mobile {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 
   &-tags {
     margin-top: 20px;
@@ -380,13 +401,21 @@ code {
   }
 
   &-profil{
-
+    @include mobile {
+      flex-direction: row-reverse;
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+    }
     .logement__header-content{
       display: flex;
       flex-direction: row;
       align-items: center;
       margin-bottom: 20px;
       gap: 10px;
+      @include mobile {
+        margin: 0px;;
+      }
 
       .logement__header-photo {
         display: flex;

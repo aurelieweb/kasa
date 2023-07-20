@@ -14,7 +14,7 @@ function Logement() {
   }
 
   return (
-    <div className="main">
+    <div className="main logement-page">
       <Slideshow logement={logement} />
       <HeaderLogement logement={logement} />
         <Collapse className='collapse-row'
@@ -37,4 +37,3 @@ function Logement() {
 }
 
 export default Logement;
-

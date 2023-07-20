@@ -5,7 +5,7 @@ import Accueil from './pages/Accueil';
 import APropos from './pages/APropos';
 import Logement from './pages/Logement';
 import Error from './components/Error';
-import './styles/styles.scss'
+import './styles/styles.scss';
 
 function App() {
   return (
@@ -16,10 +16,10 @@ function App() {
           <Route path="/" element={<Accueil />} />
 
           {/* Route de la page À propos */}
-          <Route path="/a-propos" element={<APropos />} />
+          <Route path="/a-propos" element={<APropos className="a-propos-page" />} />
 
           {/* Route de la page de logement avec un paramètre d'ID */}
-          <Route path="/logement/:id" element={<Logement />} />
+          <Route path="/logement/:id" element={<Logement className="logement-page" />} />
 
           {/* Route par défaut pour la page d'erreur */}
           <Route path="*" element={<Error />} />
@@ -30,4 +30,3 @@ function App() {
 }
 
 export default App;
-

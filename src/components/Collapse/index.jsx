@@ -15,7 +15,7 @@ function Collapse({ data }) {
   };
 
   return (
-    <div className='collapse collapse-row'>
+    <div className='collapse'>
       {data.map((item, index) => (
         <div key={index} className="collapse__container">
           <div className="collapse__container-header" onClick={() => toggleCollapse(index)}>
