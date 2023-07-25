@@ -12,6 +12,11 @@ body {
     -moz-osx-font-smoothing: grayscale;
     background-color: #ffffff;
     color: $white;
+    font-weight: 500;
+    font-size: 18px;
+    @include mobile {
+      font-size: 12px;
+    }
     ;
   }
   
@@ -25,8 +30,11 @@ code {
   }
   
   h2 {
-    @extend .typo__text-18;
-    //test h2
+    font-size: 36px;
+    font-weight: 500;
+    @include mobile {
+      font-size: 18px;
+    }
   }
 
   /*Mettre en place un container à 1440px? A voir*/
@@ -58,20 +66,12 @@ code {
   flex-direction: column;
   margin-top: 63px;
   align-items: center;
-  padding-bottom: 209px;
 
 }
 
   /*HEADER*/
 .header {
-    /*Voir pour gestion de la largeur si possible responsive ou pas?
 
-    Exemple uilisation mixin
-    @include tablet {
-      display: flex;
-      justify-content: space-between;  
-   }
-    */
   display: flex;
   width: 100%;
   position: relative;
@@ -136,7 +136,6 @@ code {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
@@ -156,11 +155,14 @@ code {
 /*BANNER*/
 .banner {
   width: 100%;
-  height: 223px;
+  /*height: 223px;*/
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 30px;
+  @include mobile {
+    margin-bottom: 20px;
+  }
 
   &-image {
     width: 100%;
@@ -173,7 +175,13 @@ code {
 
     & h1 {
       @include mobile {
-      font-size: 24px;
+        font-size: 24px;
+        width: 8em;
+        text-align: left;
+      }
+      @include tablet {
+        font-size: 32px;
+        
       }
     }
   }
@@ -208,13 +216,11 @@ code {
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
     max-width: 340px;
     width: 100%;
     height: 340px;
-    padding-bottom: 10px;
     border-radius: 10px;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
-    background-color: $pink;
     @include mobile {
       height: 255px;
     }
@@ -223,11 +229,9 @@ code {
   &__image {
     width: 100%;
     max-width: 335px;
-    height: 335px;
-    padding: 2.5px;
+    height: 100%;
     object-fit: cover;
     border-radius: 10px;
-    margin-bottom: 10px;
     @include mobile {
       height: 200px;
     }
@@ -239,8 +243,10 @@ code {
   }
 
   &__content { 
-    width : 100%;
+    width: 100%;
     height: 50px;
+    position: absolute;
+    bottom: 20px;
     &-text {
       color: $white;
       height: 100%;
@@ -268,6 +274,12 @@ code {
       padding: 0 10px;
       position: relative;
       bottom: -5px;
+      @include mobile {
+        height: 30px;
+      }
+      p {
+        margin: 0;
+      }
     }
 
     &-content{
@@ -275,6 +287,12 @@ code {
     color: $pink;
     padding: 0 10px;
     border-radius: 0 0 5px 5px;
+    @include mobile {
+      height: 145px;
+    }
+      p {
+        font-weight: 400;
+      }
     }
   }
 }
@@ -334,27 +352,17 @@ code {
 
   }
 
-  &-bullets {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-  
-    & button {
-      background-color: rgba(255, 255, 255, 0.5);
-      border: none;
-      border-radius: 50%;
-      width: 10px;
-      height: 10px;
-      margin: 0 5px;
-      padding: 0;
-      cursor: pointer;
-    
-      &.active {
-        background-color: #fff;
-      }
+    /* Nouveau style pour afficher les numéros */
+    &-numbers {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: #fff;
+      font-size: 16px;
+      font-weight: bold;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     }
-  }
 
   img {
     width: 100%;
@@ -378,6 +386,13 @@ code {
     align-items: flex-start;
   }
 
+  &-location {
+
+    @include mobile {
+      font-size: 14px;
+    }
+  }
+
   &-tags {
     margin-top: 20px;
     display: flex;
@@ -390,13 +405,17 @@ code {
       justify-content: center;
       min-width: 95px;
       height: 25px;
-      border-radius: 10px;
+      border-radius: 5px;
       background-color: #FF6060;
       color: white;
       font-size: 14px;
       text-align: center;
       align-items: center;
       padding: 0 10px;
+      @include mobile {
+        min-width: 84px;
+        height: 18px;
+      }
     } 
   }
 
@@ -424,7 +443,10 @@ code {
         background-color: $grey;
         border-radius: 50%;
         overflow: hidden;
-        /*Placer la photo*/
+        @include mobile {
+          width: 32px;
+          height: 32px;
+        }
       }
     }
   }
@@ -438,6 +460,9 @@ code {
   justify-content: flex-end;
   font-size: 20px;
   color: #F6F6F6;
+  @include mobile {
+    font-size: 13px;
+  }
 
   .star-selected {
     color: $pink;

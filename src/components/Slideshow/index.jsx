@@ -17,10 +17,6 @@ function Slideshow({ logement }) {
     setCurrentSlide((prevSlide) => (prevSlide === pictures.length - 1 ? 0 : prevSlide + 1));
   };
 
-  const goToSlide = (index) => {
-    setCurrentSlide(index);
-  };
-
   return (
     <div className="slideshow">
       {pictures.length > 1 && (
@@ -40,14 +36,8 @@ function Slideshow({ logement }) {
 
       <img src={pictures[currentSlide]} alt={`Slide ${currentSlide}`} />
 
-      <div className="slideshow-bullets">
-        {pictures.map((_, index) => (
-          <button
-            key={index}
-            className={index === currentSlide ? 'active' : ''}
-            onClick={() => goToSlide(index)}
-          />
-        ))}
+      <div className="slideshow-numbers">
+        {`${currentSlide + 1}/${pictures.length}`}
       </div>
     </div>
   );

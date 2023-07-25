@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDown, faAngleUp } from '@fortawesome/free-solid-svg-icons';
 
 function Collapse({ data }) {
-  const [collapsedItems, setCollapsedItems] = useState([]);
+  const [collapsedItems, setCollapsedItems] = useState(data.map(() => true));
 
   const toggleCollapse = (index) => {
     setCollapsedItems((prevItems) => {
