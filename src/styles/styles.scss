@@ -42,10 +42,10 @@ code {
 .container {
   min-height: 100vh;
   margin: auto;
-  padding: 0 10px;
   display: flex;
-  justify-content: space-around;
-  max-width: 1440px;
+  flex-direction: column;
+  align-items: center;
+
 
   @include mobile {
     max-width: 375px;
@@ -54,10 +54,11 @@ code {
 
 .container__body {
   max-width: 1240px;
-  width: 100%;
+  /*width: 100%;*/
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  padding: 0 10px;
 }
 
 /*.body__name {

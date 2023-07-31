@@ -12,9 +12,10 @@ function Layout({ children }) {
       {/* Contenu principal */}
       <main>{children}</main>
 
-      {/* Footer */}
-      <Footer />
+     
       </div>
+       {/* Footer */}
+       <Footer />
     </div>
   );
 }
