@@ -5,11 +5,13 @@ import ErrorImg from '../../assets/404.png'
 
 function Error() {
   return (
-    <div className='main'>
+    <div className='main error-page'>
       <div className='error'>
-        <img src={ErrorImg} alt="Error" className="error-img" />
-        <p className='error-msg'>Oups ! La page que vous demandez n'existe pas.</p>
-        <Link to="/">Retourner à la page d’accueil</Link>
+        <div className='error__div'>
+          <img src={ErrorImg} alt="Error" className="error__div-img" />
+          <p className='error__div-msg'>Oups ! La page que vous demandez n'existe pas.</p>
+        </div>
+        <Link className="error-link" to="/">Retourner à la page d’accueil</Link>
       </div>
     </div>
   );
