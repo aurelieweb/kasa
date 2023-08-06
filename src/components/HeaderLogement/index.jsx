@@ -12,8 +12,10 @@ function HeaderLogement(props) {
       <div className="logement__header-details">
         <h2 className="logement__header-title">{logement.title}</h2>
         <div className="logement__header-location">{logement.location}</div>
+        {/* Affichage des tags du logement en utilisant le composant Tags */}
         <Tags logement={logement} />
       </div>
+      {/* Profil de l'hôte */}
       <div className="logement__header-profil">
         <div className="logement__header-content">
           <div className="logement__header-name">{name}</div> {/* Affichage du nom de l'hôte */}
@@ -21,6 +23,7 @@ function HeaderLogement(props) {
             <img src={picture} alt="Hôte" /> {/* Affichage de l'image de l'hôte */}
           </span>
         </div>
+        {/* Affichage du taux de satisfaction du logement en utilisant le composant Rate */}
         <Rate logement={logement} />
       </div>
     </div>
