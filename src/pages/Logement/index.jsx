@@ -1,9 +1,10 @@
 import React from 'react';
-import { useParams, Navigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import Slideshow from '../../components/Slideshow';
 import HeaderLogement from '../../components/HeaderLogement';
 import logementData from '../../data/logements.json';
 import Collapse from '../../components/Collapse';
+import Error from '../../components/Error';
 
 function Logement() {
   // Utilisation de la fonction useParams() pour récupérer le paramètre "id" de l'URL
@@ -14,7 +15,7 @@ function Logement() {
 
   // Vérification si le logement existe, sinon redirige vers la page d'erreur
   if (!logement) {
-    return <Navigate to="/error" replace={true} />
+    return <Error />
   }
 
   // Affichage du composant Logement
